@@ -405,12 +405,12 @@ npm run lint
 
 This is an open-source project (MIT License). Contributions welcome!
 
-See full documentation in:
+See planning documentation in the `plans/` directory:
 
-- `IMPLEMENTATION_PLAN.md` - Complete technical plan
-- `PROJECT_STRUCTURE.md` - Detailed architecture
-- `CARD_DESIGN.md` - Printable card specifications
-- `LANDING_PAGE_COPY.md` - Website copy and messaging
+- `plans/openfec-integration.md` - OpenFEC API integration for incumbent detection
+- `plans/lob-integration.md` - Physical mailing service implementation
+- `plans/card-design.md` - Printable ballot card specifications
+- `plans/grant-applications.md` - Foundation grant applications and funding
 
 ---
 
@@ -419,7 +419,7 @@ See full documentation in:
 VoteOut is funded by grants from civic engagement foundations and individual donations.
 
 - **Donate:** [Ko-fi/Open Collective links TBD]
-- **Grants:** See `GRANT_APPLICATIONS.md` for foundation applications
+- **Grants:** See `plans/grant-applications.md` for foundation applications
 
 ---
 
