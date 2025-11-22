@@ -1,0 +1,59 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Next.JS Rules
+
+## Architecture & Routing
+- Use Next.JS 14 with app router. Don't use deprecated pages router.
+- Use middleware for all auth-related and security checks.
+- Prefer server-side rendering where possible.
+- Don't use file system and fs module. It is unavailable.
+
+## Server Components & Actions
+- Use Next.JS 14 Server Actions for data mutations and forms.
+- When creating Next.JS server action, make sure "use server" is added in the top of that file.
+
+## Client Components
+- Add "use client" to each client-side component. This includes code with interactivity like buttons.
+- Use useMemo/useCallback for performance-critical components.
+- Use Lucide react for icons (already installed)
+
+## Performance & Optimization
+- Use Next.js Image component for optimized image loading.
+- Implement loading skeletons in loading.tsx file for all routes when required.
+
+## SEO & Metadata
+- Always implement relevant metadata tags in layout.tsx/jsx file.
+- Use dynamic metadata generation based on route parameters and data.
+- When adding new public page than needs to be indexed, add it to src/app/sitemap.ts/js
+
+## Error Handling
+- Implement error handling to log full errors on the server and show user-friendly error messages in the UI.
+
+# TailwindCSS & Shadcn/ui Rules
+
+- All components should be optimized for mobile
+- Use shadcnui components when available. They can be installed by running `npx shadcn@latest add button`
+- Use `@tailwindcss/typography` module and `prose` class when displaying markdown or want to display vanilla HTML elements like h1 h2 etc.
+- All components should fully support dark mode
+
+# Supabase rules
+
+- Store code for interaction with supabase in /src/lib/db/. Put server code into /src/lib/db/server-side folder. Client is in [supabase-client.ts](mdc:src/lib/db/server-side/supabase-client.ts)
+- Use @supabase/supabase-js and @supabase/ssr packages
+- Never use auth-helpers-nextjs. It will break the app
+
+
+
+- Use text in supabase, not varchar
+- add "use client" on top of all client-side components files in nextjs
+- use types from @database-types.ts and @database.ts
+- use nextjs 14 server actions, not api routes
+- store code for interaction with supabase db/storage in same folder as @user.ts
+- put all ai-related stuff to /src/lib/ai folder.
+- don't run the project, I will do this myself.
+- all the auth checks for routes happen in @middleware.ts
+

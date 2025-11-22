@@ -117,8 +117,113 @@ voteout/
 │   └── migrations/            # Database migrations
 ├── public/                    # Static assets
 ├── .env.local                 # Environment variables (DO NOT COMMIT)
+├── .claude/                   # Claude Code AI development system
+│   ├── agents/                # Specialized AI agents for development
+│   ├── commands/              # Custom slash commands
+│   └── hooks/                 # Development workflow automation
 └── package.json
 ```
+
+---
+
+## AI-Assisted Development (Claude Code)
+
+VoteOut uses **Claude Code** - an AI-powered development system that provides intelligent coding assistance, automated workflows, and specialized agents for different development tasks.
+
+### Quick Start with Claude Code
+
+**Prerequisites:**
+
+- Install Claude Code CLI: https://github.com/anthropics/claude-code
+
+**Using Custom Commands:**
+
+```bash
+# Get comprehensive repository status
+/repo-status
+
+# Run full test suite and fix all issues
+/test
+
+# Build and deploy a feature end-to-end
+/ship "add email verification to mailing requests"
+
+# Add tests for a specific module
+/add-tests "ballot-service"
+
+# Fix specific issues or bugs
+/fix "handle race condition in queue processing"
+
+# Clean up code and improve quality
+/cleanup
+```
+
+### Available Agents
+
+The project includes specialized AI agents that can be invoked for specific tasks:
+
+- **full-stack-developer**: Frontend and backend development, API integration
+- **database-admin**: Database schema, migrations, queries, performance tuning
+- **reviewer**: Code review, security analysis, performance optimization
+- **shipper**: Git workflows, deployment, CI/CD automation
+- **meta-agent**: Coordinate complex multi-agent workflows
+
+### Custom Slash Commands
+
+| Command                | Description                                       | Example                      |
+| ---------------------- | ------------------------------------------------- | ---------------------------- |
+| `/ship [feature]`      | Build and deploy feature from start to production | `/ship email notifications`  |
+| `/test [focus]`        | Run tests, identify issues, fix systematically    | `/test openfec integration`  |
+| `/add-tests [module]`  | Generate comprehensive test suite                 | `/add-tests mailing-service` |
+| `/fix [issue]`         | Debug and fix specific problems                   | `/fix address validation`    |
+| `/cleanup`             | Code quality improvements and refactoring         | `/cleanup`                   |
+| `/repo-status [focus]` | Repository health and status report               | `/repo-status git`           |
+
+### How It Works
+
+1. **Invoke a command**: Type `/ship` or call an agent directly
+2. **AI orchestration**: Claude Code coordinates multiple specialized agents
+3. **Automated workflow**: Agents handle branching, implementation, testing, review
+4. **Human oversight**: You review and approve key decisions
+
+### Example Workflow
+
+```bash
+# Ship a new feature
+/ship "integrate OpenFEC API for incumbent detection"
+
+# This will:
+# 1. Create feature branch (shipper agent)
+# 2. Implement the feature (full-stack-developer agent)
+# 3. Run tests (shipper agent)
+# 4. Code review (reviewer agent)
+# 5. Create PR with test results (shipper agent)
+```
+
+### Development System
+
+This AI development system is part of an ongoing open-source project:
+
+**Agent Orchestration System**: https://github.com/bryanweaver/agent-orchestration-system
+
+The system provides:
+
+- Multi-agent coordination for complex tasks
+- Automated testing and quality checks
+- Git workflow automation
+- Development best practices enforcement
+- Session logging and audit trails
+
+### Configuration
+
+Claude Code settings are stored in `.claude/settings.local.json` (git-ignored).
+
+Key directories:
+
+- `.claude/agents/` - Agent definitions and capabilities
+- `.claude/commands/` - Custom slash command implementations
+- `.claude/hooks/` - Workflow automation and event handlers
+- `.claude/logs/` - Session logs and audit trails (git-ignored)
 
 ---
 
