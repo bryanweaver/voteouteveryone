@@ -1,0 +1,51 @@
+{
+  "name": "voteout",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "seed:congress": "node scripts/seed-congress.js",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
+    "@radix-ui/react-accordion": "^1.2.10",
+    "@radix-ui/react-avatar": "^1.1.9",
+    "@radix-ui/react-dialog": "^1.1.13",
+    "@radix-ui/react-dropdown-menu": "^2.1.14",
+    "@radix-ui/react-label": "^2.1.6",
+    "@radix-ui/react-scroll-area": "^1.2.8",
+    "@radix-ui/react-separator": "^1.1.6",
+    "@radix-ui/react-slot": "^1.2.2",
+    "@supabase/ssr": "^0.3.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "20.6.0",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "autoprefixer": "10.4.15",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "encoding": "^0.1.13",
+    "eslint-config-next": "^14.0.4",
+    "lucide-react": "^0.294.0",
+    "next": "^14.0.4",
+    "postcss": "^8.4.38",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.56.3",
+    "supports-color": "^8.1.1",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "3.3.3",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "5.2.2",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "playwright": "^1.56.1"
+  }
+}
