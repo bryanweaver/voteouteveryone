@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+# Run type checking
+echo "🔍 Running type check..."
+npm run type-check || exit 1
+
+# Run lint-staged (formats and lints staged files)
+echo "🎨 Running lint-staged..."
+npx lint-staged || exit 1
+
+# Run tests
+echo "🧪 Running tests..."
+npm run test:run || exit 1
+
+echo "✅ Pre-commit checks passed!"
