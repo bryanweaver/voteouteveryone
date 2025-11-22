@@ -18,7 +18,7 @@ VoteOut provides personalized ballot guides that clearly show which candidates a
 
 ### Prerequisites
 
-- Node.js 18+ and npm
+- Node.js 20+ and npm
 - Supabase CLI (`npm install -g supabase`)
 - Git
 
@@ -26,16 +26,16 @@ VoteOut provides personalized ballot guides that clearly show which candidates a
 
 This project uses the following ports to avoid conflicts with other Supabase projects:
 
-| Service | Port |
-|---------|------|
-| API | 54341 |
-| Database | 54342 |
-| Studio | 54343 |
+| Service                  | Port  |
+| ------------------------ | ----- |
+| API                      | 54341 |
+| Database                 | 54342 |
+| Studio                   | 54343 |
 | Inbucket (Email Testing) | 54344 |
-| SMTP | 54345 |
-| POP3 | 54346 |
-| Analytics | 54347 |
-| Vector | 54348 |
+| SMTP                     | 54345 |
+| POP3                     | 54346 |
+| Analytics                | 54347 |
+| Vector                   | 54348 |
 
 **Supabase Studio URL:** http://localhost:54343
 **API URL:** http://127.0.0.1:54341
@@ -43,12 +43,14 @@ This project uses the following ports to avoid conflicts with other Supabase pro
 ### Installation Steps
 
 1. **Clone and install dependencies:**
+
    ```bash
    cd C:\projects\voteout
    npm install
    ```
 
 2. **Start Supabase local development:**
+
    ```bash
    supabase start
    ```
@@ -83,6 +85,7 @@ This project uses the following ports to avoid conflicts with other Supabase pro
    - Add to `.env.local` as `OPENFEC_API_KEY`
 
 5. **Run the development server:**
+
    ```bash
    npm run dev
    ```
@@ -124,17 +127,23 @@ voteout/
 The project uses three main tables:
 
 ### `ballot_cache`
+
 Caches ballot data from external APIs to reduce costs and improve performance.
+
 - Expires automatically after election day
 - Indexed by address and election ID
 
 ### `mailing_queue`
+
 Manages physical mailing requests via Lob API.
+
 - Tracks status: pending → processing → sent/failed
 - Links to cached ballot data
 
 ### `usage_stats`
+
 Privacy-focused analytics (no PII).
+
 - Tracks event types: ballot_lookup, pdf_download, mailing_request
 - Stores only state/county/ZIP for geographic analysis
 
@@ -219,6 +228,7 @@ npm run lint
 ### Adding a New Feature
 
 1. **Create database migrations** (if needed):
+
    ```bash
    supabase migration new add_feature_table
    ```
@@ -226,11 +236,13 @@ npm run lint
 2. **Write migration SQL** in `supabase/migrations/<timestamp>_add_feature_table.sql`
 
 3. **Apply migration:**
+
    ```bash
    supabase db reset  # or just restart supabase
    ```
 
 4. **Generate types:**
+
    ```bash
    supabase gen types typescript --local > src/lib/database/database-types.ts
    ```
@@ -272,6 +284,7 @@ npm run lint
 4. Deploy
 
 **Environment Variables for Production:**
+
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
@@ -288,6 +301,7 @@ npm run lint
 This is an open-source project (MIT License). Contributions welcome!
 
 See full documentation in:
+
 - `IMPLEMENTATION_PLAN.md` - Complete technical plan
 - `PROJECT_STRUCTURE.md` - Detailed architecture
 - `CARD_DESIGN.md` - Printable card specifications
@@ -323,6 +337,7 @@ VoteOut is funded by grants from civic engagement foundations and individual don
 **Current Phase:** Initial setup and MVP development
 
 **Next Steps:**
+
 1. Build address input form
 2. Integrate Google Civic API
 3. Create ballot display components
@@ -341,6 +356,7 @@ MIT License - see LICENSE file
 ## Contact
 
 For questions or support:
+
 - GitHub Issues: [Create an issue]
 - Email: [TBD]
 
