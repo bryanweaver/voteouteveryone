@@ -46,7 +46,7 @@ npm run test:run
 
 If any check fails, the commit is **blocked**. You'll see output like:
 
-```
+```text
 🔍 Running type check...
 ❌ Type check failed! Fix errors and try again.
 ```
